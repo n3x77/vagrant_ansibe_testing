@@ -15,7 +15,7 @@ Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/bionic64"
 
   # Set hostname of box
-  config.vm.hostname = "timesketch"
+  config.vm.hostname = "ansible-testing"
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.
@@ -30,8 +30,8 @@ Vagrant.configure("2") do |config|
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine and only allow access
   # via 127.0.0.1 to disable public access
-  config.vm.network "forwarded_port", guest: 22, host: 8022, host_ip: "127.0.0.1"
-  config.vm.network "forwarded_port", guest: 443, host: 8443, host_ip: "127.0.0.1"
+  config.vm.network "forwarded_port", guest: 22, host: 8822, host_ip: "127.0.0.1"
+  config.vm.network "forwarded_port", guest: 443, host: 8843, host_ip: "127.0.0.1"
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
@@ -55,9 +55,9 @@ Vagrant.configure("2") do |config|
    config.vm.provider "virtualbox" do |vb|
      # Display the VirtualBox GUI when booting the machine
      vb.gui = false
-     vb.name = "timesketch"
+     vb.name = "ansible-testing"
      # Customize the amount of memory on the VM:
-     vb.memory = "4096"
+     vb.memory = "1024"
    end
   #
   # View the documentation for the provider you are using for more
@@ -71,9 +71,9 @@ Vagrant.configure("2") do |config|
     apt-get install -y python3-dev python3 python3-apt
   SHELL
 
-  # Use the ansible playbook for the setup of timesketch
+  # Use the ansible playbook for the setup of ansible-testing
   config.vm.provision "ansible" do |ansible|
-    ansible.playbook = "timesketch.yml"
+    ansible.playbook = "playbook.yml"
   end
 end
 
