@@ -1,0 +1,13 @@
+# Ansible Playbook for deployment of anything on a Ubuntu 18.04 vagrant box
+# Version: 0.1
+# Date: 2020-01-02
+# Author: @n3x771 - Sven Püschel - spueschel89@gmail.com
+#   the installation guide for the current timesketch & plaso version!
+---
+- hosts: all
+
+  roles:
+    - { role: myrole }
+
+  vars_prompt:
+

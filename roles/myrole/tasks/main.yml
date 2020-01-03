@@ -1,0 +1,14 @@
+---
+# file: roles/myrole/tasks/main.yml
+- name: APT | Install some dependencies 
+  apt:
+    name:
+        - automake
+        - libtool
+        - make
+        - gcc
+    state: present
+    install_recommends : yes
+  become: yes
+  become_method: sudo
+
