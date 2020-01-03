@@ -331,3 +331,19 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/go,vim,venv,linux,macos,python,windows,pycharm+all,visualstudiocode
+#
+# Created by https://www.gitignore.io/api/vagrant
+# # Edit at https://www.gitignore.io/?templates=vagrant
+#
+### Vagrant ###
+# General
+.vagrant/*
+
+# Log files (if you are creating logs in debug mode, uncomment this)
+# *.log
+
+### Vagrant Patch ###
+*.box
+
+# End of https://www.gitignore.io/api/vagrant
+
